@@ -177,7 +177,7 @@ public class ModuleOre extends ModuleBase
 		return h;
 	}
 
-	// TODO
+	// TODO testに移行
 	public static void main(String[] args)
 	{
 		test_getRandomHeight();

@@ -1,5 +1,6 @@
 package mirrg.minecraft.mod.miragefairy.modules.fairy;
 
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.util.text.translation.I18n;
 
 public interface IFairy
@@ -11,14 +12,7 @@ public interface IFairy
 
 	public default String getUnlocalizedName(String unlocalizedNamePrefix)
 	{
-		return unlocalizedNamePrefix + toUpperCaseHead(getUnlocalizedName());
-	}
-
-	// TODO move to util
-	public static String toUpperCaseHead(String str)
-	{
-		if (str.length() == 0) return str;
-		return str.substring(0, 1).toUpperCase() + str.substring(1);
+		return unlocalizedNamePrefix + Util.toUpperCaseHead(getUnlocalizedName());
 	}
 
 	public default String getLocalizedName()

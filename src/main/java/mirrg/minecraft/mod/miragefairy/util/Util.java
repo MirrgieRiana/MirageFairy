@@ -26,4 +26,10 @@ public class Util
 		return tileEntity;
 	}
 
+	public static String toUpperCaseHead(String str)
+	{
+		if (str.length() == 0) return str;
+		return str.substring(0, 1).toUpperCase() + str.substring(1);
+	}
+
 }

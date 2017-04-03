@@ -171,7 +171,7 @@ public abstract class FairyMagic
 	{
 		int color = fairy.getColorHair();
 		for (int j = 0; j < count; j++) {
-			// TODO particleTypeがSPELL SPELL_MOB以外だとSPELL_INSTANTでも色指定が行われない
+			// TODO particleTypeがSPELLかSPELL_MOB以外だとSPELL_INSTANTでも色指定が行われない
 			// playEventならできるがBlockPosになる
 			worldIn.spawnParticle(particleType, vec3d.xCoord, vec3d.yCoord, vec3d.zCoord,
 				((color >> 16) & 0xff) / 255.0, ((color >> 8) & 0xff) / 255.0, ((color >> 0) & 0xff) / 255.0,

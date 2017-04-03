@@ -319,7 +319,7 @@ public class FairyGatcha
 					.toLowerCase().indexOf(k.toLowerCase()) != -1));
 	}
 
-	// TODO
+	// TODO testに移行
 	public static void main(String[] args)
 	{
 		System.out.println(ItemFairyWand.getString(FairyGatcha.getGatchaWeight(new FairyGatchaSettings(2, 3, 0.2))));

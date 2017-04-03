@@ -10,6 +10,6 @@ public class FairyMagicNeedleShot extends FairyMagic
 		super("needleShot", 1);
 	}
 
-	// TODO
+	// TODO 実装
 
 }

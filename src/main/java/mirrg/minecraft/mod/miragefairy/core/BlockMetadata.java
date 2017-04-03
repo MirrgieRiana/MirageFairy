@@ -41,7 +41,7 @@ public class BlockMetadata<T extends Enum<T> & IBlockTypeProvider & IStringSeria
 		this.propertyType = propertyType;
 		setDefaultState(blockState.getBaseState().withProperty(propertyType, defaultType));
 
-		// TODO
+		// TODO pickaxe以外のharvestLevelを設定できない
 		for (T type : types2) {
 			setHarvestLevel("pickaxe", type.getBlockType().harvestLevel, getState(type));
 		}
