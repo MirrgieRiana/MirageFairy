@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairychest;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;

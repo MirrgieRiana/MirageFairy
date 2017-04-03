@@ -1,5 +1,8 @@
 package mirrg.minecraft.mod.miragefairy.modules.main;
 
+import mirrg.minecraft.mod.miragefairy.modules.main.fairychest.ContainerFairyChest;
+import mirrg.minecraft.mod.miragefairy.modules.main.fairychest.GuiFairyChest;
+import mirrg.minecraft.mod.miragefairy.modules.main.fairychest.TileEntityFairyChest;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;

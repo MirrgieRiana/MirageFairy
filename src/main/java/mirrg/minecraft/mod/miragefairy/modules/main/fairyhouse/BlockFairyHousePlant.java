@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse;
 
 import java.util.Hashtable;
 import java.util.Random;
@@ -6,6 +6,9 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy;
+import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatcha;
+import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatchaSettings;
+import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.util.Color;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -26,7 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockFairyHousePlant extends BlockFairyHouseBase
 {
 
-	protected BlockFairyHousePlant()
+	public BlockFairyHousePlant()
 	{
 		super(Material.PLANTS);
 		setHardness(0.25F);

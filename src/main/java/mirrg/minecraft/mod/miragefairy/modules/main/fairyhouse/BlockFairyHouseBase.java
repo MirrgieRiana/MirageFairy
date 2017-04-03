@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -6,6 +6,7 @@ import java.util.List;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ModuleFairy;
+import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatcha;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;

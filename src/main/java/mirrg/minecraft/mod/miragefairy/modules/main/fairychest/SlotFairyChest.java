@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairychest;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ItemFairyBase;
 import net.minecraft.inventory.IInventory;

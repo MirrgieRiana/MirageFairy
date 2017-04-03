@@ -1,9 +1,12 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse;
 
 import java.util.Hashtable;
 import java.util.Random;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy;
+import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatcha;
+import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatchaSettings;
+import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.util.Color;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.ITileEntityProvider;

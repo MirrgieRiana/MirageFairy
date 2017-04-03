@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.modules.main.fairychest;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import mirrg.minecraft.mod.miragefairy.MirageFairyMod;
+import mirrg.minecraft.mod.miragefairy.modules.main.EnumGUI;
+import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.util.Color;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
