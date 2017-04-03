@@ -98,7 +98,7 @@ public class FairyGatcha
 			tableFairy.add(new Hashtable<>());
 		}
 		for (Entry<EnumFairy, int[]> entry : fairiesWithWeight.entrySet()) {
-			tableFairy.get(entry.getKey().rarity - 1).put(entry.getKey(), new double[] {
+			tableFairy.get(entry.getKey().getRarity() - 1).put(entry.getKey(), new double[] {
 				entry.getValue()[0]
 			});
 		}

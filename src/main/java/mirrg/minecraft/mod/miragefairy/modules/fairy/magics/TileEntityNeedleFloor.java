@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.fairy;
+package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

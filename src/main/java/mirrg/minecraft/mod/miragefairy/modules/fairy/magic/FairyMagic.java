@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.IFairy;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ItemFairyBase;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import net.minecraft.block.state.IBlockState;
@@ -169,7 +169,7 @@ public abstract class FairyMagic
 
 	protected void spawnParticle(EnumParticleTypes particleType, IFairy fairy, int count, World worldIn, Vec3d vec3d)
 	{
-		int color = fairy.getColorHair();
+		int color = fairy.getColor().hair;
 		for (int j = 0; j < count; j++) {
 			// TODO particleTypeがSPELLかSPELL_MOB以外だとSPELL_INSTANTでも色指定が行われない
 			// playEventならできるがBlockPosになる

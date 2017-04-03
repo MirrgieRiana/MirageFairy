@@ -1,8 +1,8 @@
-package mirrg.minecraft.mod.miragefairy.modules.fairy;
+package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 
 import javax.annotation.Nullable;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.TileEntityNeedleFloor.Data;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.TileEntityNeedleFloor.Data;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -27,7 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockNeedleFloor extends Block implements ITileEntityProvider
 {
 
-	protected BlockNeedleFloor()
+	public BlockNeedleFloor()
 	{
 		super(Material.CACTUS);
 		setSoundType(SoundType.PLANT);

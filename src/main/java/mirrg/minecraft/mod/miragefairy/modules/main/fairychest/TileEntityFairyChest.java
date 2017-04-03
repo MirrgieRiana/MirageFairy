@@ -192,19 +192,19 @@ public class TileEntityFairyChest extends TileEntityLockableLoot implements ITic
 				EnumFairy fairy = ((ItemFairyBase) itemStack.getItem()).getFairy(itemStack);
 				int color;
 
-				color = fairy.colorDark;
+				color = fairy.getColor().dark;
 				r += (color >> 16) & 0xff;
 				g += (color >> 8) & 0xff;
 				b += (color >> 0) & 0xff;
 				c++;
 
-				color = fairy.colorBright;
+				color = fairy.getColor().bright;
 				r += (color >> 16) & 0xff;
 				g += (color >> 8) & 0xff;
 				b += (color >> 0) & 0xff;
 				c++;
 
-				color = fairy.colorHair;
+				color = fairy.getColor().hair;
 				r += (color >> 16) & 0xff;
 				g += (color >> 8) & 0xff;
 				b += (color >> 0) & 0xff;

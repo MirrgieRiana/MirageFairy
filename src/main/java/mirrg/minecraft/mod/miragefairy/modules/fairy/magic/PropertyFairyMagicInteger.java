@@ -1,6 +1,6 @@
 package mirrg.minecraft.mod.miragefairy.modules.fairy.magic;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.IFairy;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 
 public class PropertyFairyMagicInteger extends PropertyFairyMagic<Integer>
 {

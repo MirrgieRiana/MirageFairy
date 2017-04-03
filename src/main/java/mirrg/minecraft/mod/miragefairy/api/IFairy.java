@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.fairy;
+package mirrg.minecraft.mod.miragefairy.api;
 
 import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.util.text.translation.I18n;
@@ -20,33 +20,12 @@ public interface IFairy
 		return I18n.translateToLocal("fairy." + getUnlocalizedName() + ".name").trim();
 	}
 
-	public int getColorSkin();
-
-	public int getColorDark();
-
-	public int getColorBright();
-
-	public int getColorHair();
+	public FairyColorset getColor();
 
 	public int getRarity();
 
 	public double getCost();
 
-	public double getCo();
-
-	public double getIn();
-
-	public double getVi();
-
-	public double getLo();
-
-	public double getMa();
-
-	public double getEt();
-
-	public default double getSum()
-	{
-		return getCo() + getIn() + getVi() + getLo() + getMa() + getEt();
-	}
+	public FairyPotential getPotential();
 
 }

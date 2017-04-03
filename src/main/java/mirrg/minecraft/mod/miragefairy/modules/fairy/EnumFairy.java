@@ -1,10 +1,13 @@
 package mirrg.minecraft.mod.miragefairy.modules.fairy;
 
-import static mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairyPotentialType.*;
+import static mirrg.minecraft.mod.miragefairy.api.EnumFairyPotentialType.*;
 
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
+import mirrg.minecraft.mod.miragefairy.api.FairyColorset;
+import mirrg.minecraft.mod.miragefairy.api.FairyPotential;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 import mirrg.minecraft.mod.miragefairy.core.IItemTypeProvider;
 import mirrg.minecraft.mod.miragefairy.core.ItemType;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
@@ -74,15 +77,15 @@ public enum EnumFairy implements IFairy
 	enderman(48, fc(0x000000, 0x161616, 0x161616, 0xEF84FA), 3, 180, po(0, 4, 10, 1, 20, 1), null, kw(), 0),
 	enderdragon(49, fc(0x000000, 0x181818, 0x181818, 0xA500E2), 5, 220, po(0, 0, 10, 0, 20, 1), null, kw(), 0),
 	cow(50, fc(0xDE9D9D, 0x3B2E22, 0x969696, 0x000000), 1, 120, po(3, 0, 10, 0, 0, 0), null, kw(), 0),
-	villager(51, fc(0xBD8B72, 0x3C2A23, 0x71544D, 0xBD8B72), 3, 120, po(0, 10, 10, 4, 0, 0), new FairyMagicPotionSimple("scapegoat", 1, "absorption", 25, 5, Vi), kw(), 0),
+	villager(51, fc(0xBD8B72, 0x3C2A23, 0x71544D, 0xBD8B72), 3, 120, po(0, 10, 10, 4, 0, 0), new FairyMagicPotionSimple("scapegoat", 1, "absorption", 25, 5, VI), kw(), 0),
 	golem(52, fc(0xDBCDC1, 0x8B7260, 0xDDC9B9, 0x46750B), 3, 180, po(0, 10, 10, 1, 10, 0), new FairyMagicStrongBody(), kw(), 0),
 	mooshroom(53, fc(0x940E0F, 0x940E0F, 0x940E0F, 0xA1A1A1), 4, 120, po(0, 0, 10, 0, 1, 0), null, kw(), 0),
-	feather(54, fc(0xFFBE80, 0xAAAAAA, 0xFFFFFF, 0x585858), 1, 100, po(1, 2, 10, 2, 0, 0), new FairyMagicPotionSimple("levitation", 2, "levitation", 50, 0.04, Vi), kw(), 0),
+	feather(54, fc(0xFFBE80, 0xAAAAAA, 0xFFFFFF, 0x585858), 1, 100, po(1, 2, 10, 2, 0, 0), new FairyMagicPotionSimple("levitation", 2, "levitation", 50, 0.04, VI), kw(), 0),
 	leather(55, fc(0xFFBE80, 0xC65C35, 0xC65C35, 0x542716), 2, 100, po(0, 4, 10, 0, 0, 0), null, kw(), 0),
 	string(56, fc(0xFFBE80, 0x000000, 0x8C8C8C, 0xFFFFFF), 2, 100, po(0, 5, 10, 0, 0, 0), null, kw(), 0),
 	bonemeal(57, fc(0xFFBE80, 0xEAEAEA, 0xEAEAEA, 0xB9B9CB), 1, 100, po(2, 10, 3, 0, 0, 0), null, kw(), 0),
 	milk(58, fc(0xFFBE80, 0xFFFFFF, 0xFFFFFF, 0xFFFFFF), 2, 100, po(0, 0, 10, 0, 0, 0), null, kw(), 0),
-	fish(59, fc(0xFFBE80, 0x6B9F93, 0x6B9F93, 0xADBEDB), 2, 70, po(3, 0, 10, 0, 0, 0), new FairyMagicPotionSimple("waterBreathing", 1, "water_breathing", 1000, 10, Vi), kw(), 0),
+	fish(59, fc(0xFFBE80, 0x6B9F93, 0x6B9F93, 0xADBEDB), 2, 70, po(3, 0, 10, 0, 0, 0), new FairyMagicPotionSimple("waterBreathing", 1, "water_breathing", 1000, 10, VI), kw(), 0),
 	enderpearl(60, fc(0xFFBE80, 0x258474, 0x8CF4E2, 0x00725F), 3, 100, po(0, 5, 10, 2, 4, 3), null, kw(), 0),
 	netherstar(61, fc(0xFFBE80, 0xCBD6D6, 0x88A4A4, 0xD2D200), 5, 100, po(0, 6, 10, 3, 18, 5), null, kw(), 0),
 	redmushroom(62, fc(0x7C4042, 0xFE2A2A, 0xFFFFFF, 0x9A171C), 1, 60, po(0, 0, 10, 0, 3, 0), null, kw(), 0),
@@ -104,10 +107,10 @@ public enum EnumFairy implements IFairy
 	sword(78, fc(0x957546, 0x70FFD9, 0xD1FAF3, 0xE60000), 1, 120, po(2, 10, 0, 0, 0, 0), null, kw(), 0),
 	bow(79, fc(0x957546, 0x493615, 0x493615, 0xFFFFFF), 2, 120, po(0, 10, 0, 0, 0, 0), null, kw(), 0),
 	arrow(80, fc(0x957546, 0x493615, 0x493615, 0x969696), 2, 120, po(0, 10, 1, 0, 0, 0), new FairyMagicMagicArrow(), kw(), 0),
-	chestplate(81, fc(0x957546, 0xC1C1C1, 0xC1C1C1, 0xFF6578), 2, 140, po(1, 10, 3, 0, 0, 0), new FairyMagicPotionSimple("protect", 2, "resistance", 100, 5, In), kw(), 0),
+	chestplate(81, fc(0x957546, 0xC1C1C1, 0xC1C1C1, 0xFF6578), 2, 140, po(1, 10, 3, 0, 0, 0), new FairyMagicPotionSimple("protect", 2, "resistance", 100, 5, IN), kw(), 0),
 	workbench(82, fc(0x957546, 0xB17449, 0xB17449, 0x2B2315), 2, 150, po(2, 10, 0, 0, 0, 0), new FairyMagicWorkbench(), kw(), 0),
 	enchantmenttable(83, fc(0x957546, 0x322042, 0x2BDED6, 0x8A1512), 4, 150, po(0, 10, 1, 0, 4, 1), null, kw(), 0),
-	glass(84, fc(0x957546, 0xE8FAFE, 0xFFFFFF, 0xC4F7FF), 2, 160, po(4, 10, 0, 0, 1, 0), new FairyMagicPotionSimple("invisible", 3, "invisibility", 1000, 2, In), kw(), 0),
+	glass(84, fc(0x957546, 0xE8FAFE, 0xFFFFFF, 0xC4F7FF), 2, 160, po(4, 10, 0, 0, 1, 0), new FairyMagicPotionSimple("invisible", 3, "invisibility", 1000, 2, IN), kw(), 0),
 	torch(85, fc(0x957546, 0xFFB800, 0xFFC42C, 0xFFF8C3), 2, 150, po(0, 10, 1, 0, 1, 0), null, kw(), 0),
 	stair(86, fc(0x957546, 0xBB9761, 0xBB9761, 0x005500), 1, 150, po(4, 10, 0, 1, 1, 0), null, kw(), 0),
 	chest(87, fc(0x957546, 0xA76E1F, 0xA76E1F, 0x413B2F), 2, 190, po(2, 10, 0, 0, 0, 0), new FairyMagicItemCollecting(), kw(), 0),
@@ -131,14 +134,13 @@ public enum EnumFairy implements IFairy
 	public static int RARITY_MAX = 5;
 
 	public final int meta;
-	public final String unlocalizedName;
-	public final int colorSkin;
-	public final int colorDark;
-	public final int colorBright;
-	public final int colorHair;
-	public final int rarity;
-	private final double rate;
-	private final double[] potentials;
+
+	private final String unlocalizedName;
+	private final FairyColorset fairyColorset;
+	private final int rarity;
+	private final double cost;
+	private final FairyPotential fairyPotential;
+
 	public final FairyMagic fairyMagic;
 	public final String[] keywords;
 	public final int treasureWeight;
@@ -154,14 +156,26 @@ public enum EnumFairy implements IFairy
 		int treasureWeight)
 	{
 		this.meta = meta;
+
 		this.unlocalizedName = name();
-		this.colorSkin = fairyColorset.skin;
-		this.colorDark = fairyColorset.dark;
-		this.colorBright = fairyColorset.bright;
-		this.colorHair = fairyColorset.hair;
+		this.fairyColorset = fairyColorset;
 		this.rarity = rarity;
-		this.rate = rate;
-		this.potentials = potentials;
+		this.cost = rate * Math.pow(1.2, rarity - 1);
+		{
+			double potential2 = rate * Math.pow(1.33, rarity - 1);
+			double sum = DoubleStream.of(potentials).sum();
+			double max = DoubleStream.of(potentials).max().getAsDouble();
+			double deviation = max / sum;
+			double deviationRate = (deviation - 1) * (-6.0 / 5) * 0.5 + 1;
+			this.fairyPotential = new FairyPotential(
+				potential2 * potentials[0] / sum * deviationRate,
+				potential2 * potentials[1] / sum * deviationRate,
+				potential2 * potentials[2] / sum * deviationRate,
+				potential2 * potentials[3] / sum * deviationRate,
+				potential2 * potentials[4] / sum * deviationRate,
+				potential2 * potentials[5] / sum * deviationRate);
+		}
+
 		this.fairyMagic = fairyMagic;
 		this.keywords = keywords.map(k -> String.format(k, name())).toArray(String[]::new);
 		this.treasureWeight = treasureWeight;
@@ -210,27 +224,9 @@ public enum EnumFairy implements IFairy
 	}
 
 	@Override
-	public int getColorSkin()
+	public FairyColorset getColor()
 	{
-		return colorSkin;
-	}
-
-	@Override
-	public int getColorDark()
-	{
-		return colorDark;
-	}
-
-	@Override
-	public int getColorBright()
-	{
-		return colorBright;
-	}
-
-	@Override
-	public int getColorHair()
-	{
-		return colorHair;
+		return fairyColorset;
 	}
 
 	@Override
@@ -242,68 +238,13 @@ public enum EnumFairy implements IFairy
 	@Override
 	public double getCost()
 	{
-		return rate * Math.pow(1.2, rarity - 1);
-	}
-
-	public double getPotential()
-	{
-		return rate * Math.pow(1.33, rarity - 1);
-	}
-
-	private double getSum1()
-	{
-		return DoubleStream.of(potentials).sum();
-	}
-
-	private double getMax()
-	{
-		return DoubleStream.of(potentials).max().getAsDouble();
-	}
-
-	private double getDeviation()
-	{
-		return getMax() / getSum1();
-	}
-
-	private double getDeviationRate()
-	{
-		return (getDeviation() - 1) * (-6.0 / 5) * 0.5 + 1;
+		return cost;
 	}
 
 	@Override
-	public double getCo()
+	public FairyPotential getPotential()
 	{
-		return getPotential() * potentials[0] / getSum1() * getDeviationRate();
-	}
-
-	@Override
-	public double getIn()
-	{
-		return getPotential() * potentials[1] / getSum1() * getDeviationRate();
-	}
-
-	@Override
-	public double getVi()
-	{
-		return getPotential() * potentials[2] / getSum1() * getDeviationRate();
-	}
-
-	@Override
-	public double getLo()
-	{
-		return getPotential() * potentials[3] / getSum1() * getDeviationRate();
-	}
-
-	@Override
-	public double getMa()
-	{
-		return getPotential() * potentials[4] / getSum1() * getDeviationRate();
-	}
-
-	@Override
-	public double getEt()
-	{
-		return getPotential() * potentials[5] / getSum1() * getDeviationRate();
+		return fairyPotential;
 	}
 
 	public ItemTypeProvider getItemTypeProvider(String unlocalizedNamePrefix, String modelName)

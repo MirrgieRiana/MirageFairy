@@ -52,8 +52,8 @@ public class ItemFairyWand extends ItemTool
 			.forEach(e -> {
 				strings.add(String.format("  %7.3f%%: %s %s",
 					e.getValue() * 100,
-					e.getKey().rarity,
-					e.getKey().unlocalizedName));
+					e.getKey().getRarity(),
+					e.getKey().getUnlocalizedName()));
 				sum[0] += e.getValue();
 			});
 		strings.add(String.format("# %7.3f%% #", sum[0] * 100));

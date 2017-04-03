@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.main;
+package mirrg.minecraft.mod.miragefairy.api;
 
 import net.minecraft.item.ItemStack;
 

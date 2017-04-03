@@ -1,15 +1,15 @@
-package mirrg.minecraft.mod.miragefairy.modules.fairy;
+package mirrg.minecraft.mod.miragefairy.api;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 public enum EnumFairyPotentialType
 {
-	Co(ChatFormatting.DARK_GRAY),
-	In(ChatFormatting.GOLD),
-	Vi(ChatFormatting.DARK_GREEN),
-	Lo(ChatFormatting.AQUA),
-	Ma(ChatFormatting.LIGHT_PURPLE),
-	Et(ChatFormatting.WHITE);
+	CO(ChatFormatting.DARK_GRAY),
+	IN(ChatFormatting.GOLD),
+	VI(ChatFormatting.DARK_GREEN),
+	LO(ChatFormatting.AQUA),
+	MA(ChatFormatting.LIGHT_PURPLE),
+	ET(ChatFormatting.WHITE);
 
 	public final ChatFormatting color;
 

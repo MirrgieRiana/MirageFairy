@@ -2,7 +2,7 @@ package mirrg.minecraft.mod.miragefairy.modules.fairy.magic;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.IFairy;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 
 public abstract class PropertyFairyMagic<T>
 {
@@ -21,8 +21,19 @@ public abstract class PropertyFairyMagic<T>
 	public T get(IFairy fairy)
 	{
 		return function.get(new double[] {
-			fairy.getCo(), fairy.getIn(), fairy.getVi(), fairy.getLo(), fairy.getMa(), fairy.getEt(),
-		}, fairy.getCo(), fairy.getIn(), fairy.getVi(), fairy.getLo(), fairy.getMa(), fairy.getEt());
+			fairy.getPotential().co(),
+			fairy.getPotential().in(),
+			fairy.getPotential().vi(),
+			fairy.getPotential().lo(),
+			fairy.getPotential().ma(),
+			fairy.getPotential().et(),
+		},
+			fairy.getPotential().co(),
+			fairy.getPotential().in(),
+			fairy.getPotential().vi(),
+			fairy.getPotential().lo(),
+			fairy.getPotential().ma(),
+			fairy.getPotential().et());
 	}
 
 	public String toString(IFairy fairy)

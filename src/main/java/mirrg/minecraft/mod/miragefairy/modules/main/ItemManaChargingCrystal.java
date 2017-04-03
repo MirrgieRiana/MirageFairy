@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
+import mirrg.minecraft.mod.miragefairy.api.IItemManaProvider;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

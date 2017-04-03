@@ -5,6 +5,8 @@ import java.util.List;
 
 import mirrg.minecraft.mod.miragefairy.MirageFairyMod;
 import mirrg.minecraft.mod.miragefairy.core.ModuleBase;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.BlockNeedleFloor;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.TileEntityNeedleFloor;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -213,10 +215,10 @@ public class ModuleFairy extends ModuleBase
 				@Override
 				public int getColorFromItemstack(ItemStack stack, int tintIndex)
 				{
-					if (tintIndex == 0) return itemFairySpirit.getFairy(stack).colorDark;
-					if (tintIndex == 1) return itemFairySpirit.getFairy(stack).colorSkin;
-					if (tintIndex == 2) return itemFairySpirit.getFairy(stack).colorBright;
-					if (tintIndex == 3) return itemFairySpirit.getFairy(stack).colorHair;
+					if (tintIndex == 0) return itemFairySpirit.getFairy(stack).getColor().dark;
+					if (tintIndex == 1) return itemFairySpirit.getFairy(stack).getColor().skin;
+					if (tintIndex == 2) return itemFairySpirit.getFairy(stack).getColor().bright;
+					if (tintIndex == 3) return itemFairySpirit.getFairy(stack).getColor().hair;
 					return 0xffffff;
 				}
 			}, new Item[] {
@@ -226,11 +228,11 @@ public class ModuleFairy extends ModuleBase
 				@Override
 				public int getColorFromItemstack(ItemStack stack, int tintIndex)
 				{
-					if (tintIndex == 0) return itemFairy.getFairy(stack).colorSkin;
+					if (tintIndex == 0) return itemFairy.getFairy(stack).getColor().skin;
 					if (tintIndex == 1) return 0x00BE00;
-					if (tintIndex == 2) return itemFairy.getFairy(stack).colorDark;
-					if (tintIndex == 3) return itemFairy.getFairy(stack).colorBright;
-					if (tintIndex == 4) return itemFairy.getFairy(stack).colorHair;
+					if (tintIndex == 2) return itemFairy.getFairy(stack).getColor().dark;
+					if (tintIndex == 3) return itemFairy.getFairy(stack).getColor().bright;
+					if (tintIndex == 4) return itemFairy.getFairy(stack).getColor().hair;
 					return 0xffffff;
 				}
 			}, new Item[] {
@@ -240,10 +242,10 @@ public class ModuleFairy extends ModuleBase
 				@Override
 				public int getColorFromItemstack(ItemStack stack, int tintIndex)
 				{
-					if (tintIndex == 0) return itemMagicSphere.getFairy(stack).colorDark;
-					if (tintIndex == 1) return itemMagicSphere.getFairy(stack).colorHair;
-					if (tintIndex == 2) return itemMagicSphere.getFairy(stack).colorSkin;
-					if (tintIndex == 3) return itemMagicSphere.getFairy(stack).colorBright;
+					if (tintIndex == 0) return itemMagicSphere.getFairy(stack).getColor().dark;
+					if (tintIndex == 1) return itemMagicSphere.getFairy(stack).getColor().hair;
+					if (tintIndex == 2) return itemMagicSphere.getFairy(stack).getColor().skin;
+					if (tintIndex == 3) return itemMagicSphere.getFairy(stack).getColor().bright;
 					return 0xffffff;
 				}
 			}, new Item[] {
@@ -254,15 +256,15 @@ public class ModuleFairy extends ModuleBase
 				public int getColorFromItemstack(ItemStack stack, int tintIndex)
 				{
 					EnumFairy fairyOperator = itemMagicSphereWithFairy.getFairyStored(stack).orElse(EnumFairy.air);
-					if (tintIndex == 0) return itemMagicSphereWithFairy.getFairy(stack).colorDark;
-					if (tintIndex == 1) return itemMagicSphereWithFairy.getFairy(stack).colorHair;
-					if (tintIndex == 2) return fairyOperator.colorSkin;
+					if (tintIndex == 0) return itemMagicSphereWithFairy.getFairy(stack).getColor().dark;
+					if (tintIndex == 1) return itemMagicSphereWithFairy.getFairy(stack).getColor().hair;
+					if (tintIndex == 2) return fairyOperator.getColor().skin;
 					if (tintIndex == 3) return 0x00BE00;
-					if (tintIndex == 4) return fairyOperator.colorDark;
-					if (tintIndex == 5) return fairyOperator.colorBright;
-					if (tintIndex == 6) return fairyOperator.colorHair;
-					if (tintIndex == 7) return itemMagicSphereWithFairy.getFairy(stack).colorSkin;
-					if (tintIndex == 8) return itemMagicSphereWithFairy.getFairy(stack).colorBright;
+					if (tintIndex == 4) return fairyOperator.getColor().dark;
+					if (tintIndex == 5) return fairyOperator.getColor().bright;
+					if (tintIndex == 6) return fairyOperator.getColor().hair;
+					if (tintIndex == 7) return itemMagicSphereWithFairy.getFairy(stack).getColor().skin;
+					if (tintIndex == 8) return itemMagicSphereWithFairy.getFairy(stack).getColor().bright;
 					return 0xffffff;
 				}
 			}, new Item[] {

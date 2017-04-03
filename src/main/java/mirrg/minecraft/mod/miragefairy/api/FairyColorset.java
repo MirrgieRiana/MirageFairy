@@ -1,4 +1,4 @@
-package mirrg.minecraft.mod.miragefairy.modules.fairy;
+package mirrg.minecraft.mod.miragefairy.api;
 
 public class FairyColorset
 {

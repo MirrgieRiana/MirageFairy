@@ -5,10 +5,11 @@ import java.util.Optional;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
+import mirrg.minecraft.mod.miragefairy.api.EnumFairyPotentialType;
+import mirrg.minecraft.mod.miragefairy.api.IItemManaProvider;
 import mirrg.minecraft.mod.miragefairy.core.ItemMetadata;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy.ItemTypeProvider;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
-import mirrg.minecraft.mod.miragefairy.modules.main.IItemManaProvider;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -63,23 +64,23 @@ public abstract class ItemFairyBase extends ItemMetadata<EnumFairy.ItemTypeProvi
 		if (showTypeInformation()) {
 			tooltip.add(String.format("Type: %s%s(%s)",
 				ChatFormatting.YELLOW,
-				fairy.unlocalizedName,
+				fairy.getUnlocalizedName(),
 				fairy.meta));
 		}
 
 		if (showGeneralInformation()) {
-			tooltip.add("Rarity: " + ChatFormatting.GOLD + repeat("★", fairy.rarity));
+			tooltip.add("Rarity: " + ChatFormatting.GOLD + repeat("★", fairy.getRarity()));
 			tooltip.add("Cost: " + ChatFormatting.GREEN + ((int) fairy.getCost()));
 			tooltip.add(String.format("    %s%s%3d",
-				advanced ? ChatFormatting.GRAY + "Et" : "", EnumFairyPotentialType.Et.color, (int) fairy.getEt()));
+				advanced ? ChatFormatting.GRAY + "Et" : "", EnumFairyPotentialType.ET.color, (int) fairy.getPotential().et()));
 			tooltip.add(String.format("%s%s%3d    %s%s%3d",
-				advanced ? ChatFormatting.GRAY + "Lo" : "", EnumFairyPotentialType.Lo.color, (int) fairy.getLo(),
-				advanced ? ChatFormatting.GRAY + "Ma" : "", EnumFairyPotentialType.Ma.color, (int) fairy.getMa()));
+				advanced ? ChatFormatting.GRAY + "Lo" : "", EnumFairyPotentialType.LO.color, (int) fairy.getPotential().lo(),
+				advanced ? ChatFormatting.GRAY + "Ma" : "", EnumFairyPotentialType.MA.color, (int) fairy.getPotential().ma()));
 			tooltip.add(String.format("%s%s%3d    %s%s%3d",
-				advanced ? ChatFormatting.GRAY + "In" : "", EnumFairyPotentialType.In.color, (int) fairy.getIn(),
-				advanced ? ChatFormatting.GRAY + "Vi" : "", EnumFairyPotentialType.Vi.color, (int) fairy.getVi()));
+				advanced ? ChatFormatting.GRAY + "In" : "", EnumFairyPotentialType.IN.color, (int) fairy.getPotential().in(),
+				advanced ? ChatFormatting.GRAY + "Vi" : "", EnumFairyPotentialType.VI.color, (int) fairy.getPotential().vi()));
 			tooltip.add(String.format("    %s%s%3d",
-				advanced ? ChatFormatting.GRAY + "Co" : "", EnumFairyPotentialType.Co.color, (int) fairy.getCo()));
+				advanced ? ChatFormatting.GRAY + "Co" : "", EnumFairyPotentialType.CO.color, (int) fairy.getPotential().co()));
 		}
 
 		if (showMagicInformation()) {

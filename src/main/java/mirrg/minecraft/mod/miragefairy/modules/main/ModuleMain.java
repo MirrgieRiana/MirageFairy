@@ -231,7 +231,7 @@ public class ModuleMain extends ModuleBase
 								{
 									int sum = 0;
 									for (EnumFairy fairy : EnumFairy.values()) {
-										if (fairy.rarity == rarity) {
+										if (fairy.getRarity() == rarity) {
 											if (fairy.treasureWeight > 0) {
 												list.add(new LootEntryItem(ModuleFairy.itemFairy, fairy.treasureWeight, 0, new LootFunction[] {
 													new SetMetadata(new LootCondition[0], new RandomValueRange(fairy.meta)),

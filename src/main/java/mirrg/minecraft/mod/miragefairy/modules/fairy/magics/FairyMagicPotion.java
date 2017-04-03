@@ -2,7 +2,7 @@ package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 
 import java.util.ArrayList;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.IFairy;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ItemFairyBase;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;

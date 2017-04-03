@@ -1,9 +1,8 @@
 package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.IFairy;
+import mirrg.minecraft.mod.miragefairy.api.IFairy;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ItemFairyBase;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ModuleFairy;
-import mirrg.minecraft.mod.miragefairy.modules.fairy.TileEntityNeedleFloor;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicBoolean;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicDouble;

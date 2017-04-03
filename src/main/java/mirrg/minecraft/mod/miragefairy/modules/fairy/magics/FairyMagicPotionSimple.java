@@ -3,7 +3,7 @@ package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairyPotentialType;
+import mirrg.minecraft.mod.miragefairy.api.EnumFairyPotentialType;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicBoolean;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicInteger;
 
@@ -22,7 +22,7 @@ public class FairyMagicPotionSimple extends FairyMagicPotion
 
 		ArrayList<EnumFairyPotentialType> types = new ArrayList<>();
 		Stream.of(EnumFairyPotentialType.values()).forEach(types::add);
-		types.remove(EnumFairyPotentialType.Lo);
+		types.remove(EnumFairyPotentialType.LO);
 		types.remove(typeMagic);
 
 		PropertyFairyMagicInteger pStrength = new PropertyFairyMagicInteger("Strength",
