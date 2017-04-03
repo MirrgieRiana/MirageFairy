@@ -15,6 +15,8 @@ import mirrg.minecraft.mod.miragefairy.modules.main.fairychest.TileEntityFairyCh
 import mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse.BlockFairyHouseCube;
 import mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse.BlockFairyHousePlant;
 import mirrg.minecraft.mod.miragefairy.modules.main.fairyhouse.TileEntityFairyHouseCube;
+import mirrg.minecraft.mod.miragefairy.modules.ore.EnumItemMineral;
+import mirrg.minecraft.mod.miragefairy.modules.ore.ModuleOre;
 import mirrg.minecraft.mod.miragefairy.util.Color;
 import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.block.Block;
@@ -200,7 +202,7 @@ public class ModuleMain extends ModuleBase
 			});
 		}
 
-		// 妖精の宝ドロップ
+		// 宝ドロップ
 		{
 			Hashtable<ResourceLocation, EnumChestQuality> chestQualityTable = new Hashtable<>();
 			chestQualityTable.put(LootTableList.CHESTS_SPAWN_BONUS_CHEST, EnumChestQuality.NONE);
@@ -254,6 +256,36 @@ public class ModuleMain extends ModuleBase
 									"mirageFairy." + rarity));
 
 							}
+						}
+					}
+				}
+			});
+
+			MinecraftForge.EVENT_BUS.register(new Object() {
+				@SubscribeEvent
+				public void hook(LootTableLoadEvent event)
+				{
+					if (chestQualityTable.containsKey(event.getName())) {
+						EnumChestQuality chestQuality = chestQualityTable.get(event.getName());
+						if (chestQuality.enable) {
+
+							// ドロップリスト生成
+							ArrayList<LootEntry> list = new ArrayList<>();
+							{
+								list.add(new LootEntryItem(ModuleOre.itemMineral, 1, 0, new LootFunction[] {
+									new SetMetadata(new LootCondition[0], new RandomValueRange(EnumItemMineral.BLOODSTONE.ordinal())),
+								}, new LootCondition[0], "bloodstone"));
+								list.add(new LootEntryEmpty(1, 0, new LootCondition[0], "null"));
+							}
+
+							// 登録
+							event.getTable().addPool(new LootPool(
+								list.stream().toArray(LootEntry[]::new),
+								new LootCondition[0],
+								new RandomValueRange(chestQuality.quality * 5),
+								new RandomValueRange(0),
+								"mirageFairy.ore"));
+
 						}
 					}
 				}
@@ -380,6 +412,9 @@ public class ModuleMain extends ModuleBase
 				"111",
 				'1', "gemBloodstone",
 				'2', "craftingToolFairyWand"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(itemManaChargingCrystal.createItemStack(1000),
+				"craftingToolFairyWand",
+				"gemBloodstone"));
 			GameRegistry.addRecipe(new ShapelessOreRecipe(itemMaterial.getItemStack(EnumItemMaterial.MIRAGE_DUST),
 				"craftingToolFairyWand",
 				"ingotMiragium"));
