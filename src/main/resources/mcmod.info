@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "miragefairy",
+  "name": "Mirage Fairy",
+  "description": "Mirage fairy mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Mirrgie Riana"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

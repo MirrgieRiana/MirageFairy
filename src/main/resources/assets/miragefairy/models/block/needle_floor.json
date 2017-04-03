@@ -1,0 +1,6 @@
+{
+    "parent": "miragefairy:block/needle_floor_base",
+    "textures": {
+        "main": "miragefairy:blocks/needle_floor"
+    }
+}

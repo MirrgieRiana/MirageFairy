@@ -1,0 +1,8 @@
+{
+    "parent": "miragefairy:block/fairy_house_cube",
+    "textures": {
+        "end": "blocks/log_big_oak_top",
+        "side": "blocks/log_big_oak",
+        "overlay": "miragefairy:blocks/log_entrance"
+    }
+}

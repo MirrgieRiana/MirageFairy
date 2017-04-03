@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "miragefairy:items/magic_sphere_0",
+        "layer1": "miragefairy:items/magic_sphere_1",
+        "layer2": "miragefairy:items/magic_sphere_2",
+        "layer3": "miragefairy:items/magic_sphere_3"
+    }
+}

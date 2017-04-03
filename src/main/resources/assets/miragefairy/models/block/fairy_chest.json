@@ -1,0 +1,40 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "blocks/log_oak",
+        "body_top": "miragefairy:blocks/fairy_chest_body_top",
+        "body_side_bg": "miragefairy:blocks/fairy_chest_body_side_bg",
+        "body_side_l1": "miragefairy:blocks/fairy_chest_body_side_l1",
+        "body_side_l2": "miragefairy:blocks/fairy_chest_body_side_l2"
+    },
+    "elements": [
+        {   "from": [ 2, 0, 2 ],
+            "to": [ 14, 16, 14 ],
+            "faces": {
+                "down":  { "texture": "#body_top" },
+                "up":    { "texture": "#body_top" },
+                "north": { "texture": "#body_side_bg" },
+                "south": { "texture": "#body_side_bg" },
+                "west":  { "texture": "#body_side_bg" },
+                "east":  { "texture": "#body_side_bg" }
+            }
+        },
+        {   "from": [ 2, 0, 2 ],
+            "to": [ 14, 16, 14 ],
+            "faces": {
+                "north": { "texture": "#body_side_l1", "tintindex": 0 },
+                "south": { "texture": "#body_side_l1", "tintindex": 0 },
+                "west":  { "texture": "#body_side_l1", "tintindex": 0 },
+                "east":  { "texture": "#body_side_l1", "tintindex": 0 }
+            }
+        },
+        {   "from": [ 2, 0, 2 ],
+            "to": [ 14, 16, 14 ],
+            "faces": {
+                "north": { "texture": "#body_side_l2", "tintindex": 1 },
+                "south": { "texture": "#body_side_l2", "tintindex": 1 },
+                "west":  { "texture": "#body_side_l2", "tintindex": 1 },
+                "east":  { "texture": "#body_side_l2", "tintindex": 1 }
+            }
+        }
+    ]
+}

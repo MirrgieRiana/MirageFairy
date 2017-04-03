@@ -1,0 +1,14 @@
+{
+	"fairyWand.use": {
+		"sounds": [
+			"miragefairy:fairy_wand_use"
+		],
+		"subtitle": "subtitles.fairyWand.use"
+	},
+	"fairyWand.charge": {
+		"sounds": [
+			"miragefairy:fairy_wand_charge"
+		],
+		"subtitle": "subtitles.fairyWand.charge"
+	}
+}

@@ -1,0 +1,72 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "miragefairy:blocks/fairy_house_roof_side",
+        "roof_side": "miragefairy:blocks/fairy_house_roof_side",
+        "roof_top": "miragefairy:blocks/fairy_house_roof_top",
+        "wall_side": "blocks/log_oak",
+        "wall_top": "blocks/log_oak_top",
+        "wall_front": "miragefairy:blocks/fairy_house_wall_front"
+    },
+    "elements": [
+        {   "from": [ 1, 3, 1 ],
+            "to": [ 15, 5, 15 ],
+            "shade": false,
+            "faces": {
+                "down":  { "texture": "#roof_top" },
+                "up":    { "texture": "#roof_top" },
+                "north": { "texture": "#roof_side" },
+                "south": { "texture": "#roof_side" },
+                "west":  { "texture": "#roof_side" },
+                "east":  { "texture": "#roof_side" }
+            }
+        },
+        {   "from": [ 3, 5, 3 ],
+            "to": [ 13, 7, 13 ],
+            "shade": false,
+            "faces": {
+                "down":  { "texture": "#roof_top" },
+                "up":    { "texture": "#roof_top" },
+                "north": { "texture": "#roof_side" },
+                "south": { "texture": "#roof_side" },
+                "west":  { "texture": "#roof_side" },
+                "east":  { "texture": "#roof_side" }
+            }
+        },
+        {   "from": [ 5, 7, 5 ],
+            "to": [ 11, 9, 11 ],
+            "shade": false,
+            "faces": {
+                "down":  { "texture": "#roof_top" },
+                "up":    { "texture": "#roof_top" },
+                "north": { "texture": "#roof_side" },
+                "south": { "texture": "#roof_side" },
+                "west":  { "texture": "#roof_side" },
+                "east":  { "texture": "#roof_side" }
+            }
+        },
+        {   "from": [ 7, 9, 7 ],
+            "to": [ 9, 11, 9 ],
+            "shade": false,
+            "faces": {
+                "down":  { "texture": "#roof_top" },
+                "up":    { "texture": "#roof_top" },
+                "north": { "texture": "#roof_side" },
+                "south": { "texture": "#roof_side" },
+                "west":  { "texture": "#roof_side" },
+                "east":  { "texture": "#roof_side" }
+            }
+        },
+        {   "from": [ 4, 0, 4 ],
+            "to": [ 12, 3, 12 ],
+            "shade": false,
+            "faces": {
+                "down":  { "texture": "#wall_top" },
+                "up":    { "texture": "#wall_top" },
+                "north": { "texture": "#wall_front" },
+                "south": { "texture": "#wall_side" },
+                "west":  { "texture": "#wall_side" },
+                "east":  { "texture": "#wall_side" }
+            }
+        }
+    ]
+}

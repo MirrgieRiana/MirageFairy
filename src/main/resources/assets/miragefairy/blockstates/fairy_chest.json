@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,is_root=true":  { "model": "miragefairy:fairy_chest_root" },
+        "facing=south,is_root=true":  { "model": "miragefairy:fairy_chest_root", "y": 180 },
+        "facing=west,is_root=true":   { "model": "miragefairy:fairy_chest_root", "y": 270 },
+        "facing=east,is_root=true":   { "model": "miragefairy:fairy_chest_root", "y": 90 },
+        "facing=north,is_root=false": { "model": "miragefairy:fairy_chest" },
+        "facing=south,is_root=false": { "model": "miragefairy:fairy_chest", "y": 180 },
+        "facing=west,is_root=false":  { "model": "miragefairy:fairy_chest", "y": 270 },
+        "facing=east,is_root=false":  { "model": "miragefairy:fairy_chest", "y": 90 }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "miragefairy:items/doll_0",
+        "layer1": "miragefairy:items/doll_1",
+        "layer2": "miragefairy:items/doll_2"
+    }
+}

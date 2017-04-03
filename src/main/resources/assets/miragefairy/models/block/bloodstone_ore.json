@@ -1,0 +1,8 @@
+{
+    "parent": "miragefairy:block/block_multi",
+    "textures": {
+        "particle": "blocks/stone",
+        "base": "blocks/stone",
+        "overlay": "miragefairy:blocks/ore_bloodstone"
+    }
+}

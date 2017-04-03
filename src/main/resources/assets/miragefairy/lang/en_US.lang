@@ -1,0 +1,52 @@
+tile.ore.miragium.name=Miragium Ore
+tile.ore.bloodstone.name=Bloodstone Ore
+tile.needleFloor.name=Needle Floor
+tile.fairyHousePlant.name=Fairy House
+tile.fairyHouseCube.oak.name=Fairy House
+tile.fairyHouseCube.spruce.name=Fairy House
+tile.fairyHouseCube.birch.name=Fairy House
+tile.fairyHouseCube.jungle.name=Fairy House
+tile.fairyHouseCube.acacia.name=Fairy House
+tile.fairyHouseCube.dark_oak.name=Fairy House
+tile.fairyChest.name=Fairy Chest
+item.bloodstone.name=Bloodstone
+item.ingotMiragium.name=Miragium Ingot
+item.fairyWand.name=Fairywand
+item.doll.name=Doll
+item.dustMirage.name=Mirage Dust
+item.fairy.name=%s
+item.fairySpirit.name=%s's Spirit
+item.manaChargingCrystal.name=Mana Charging Crystal
+item.magicSphere.name={0}'s Sphere
+item.magicSphere.invalid.name=Magic Sphere
+item.magicSphereWithFairy.name={0}'s Sphere With {1}
+item.magicSphereWithFairy.invalid.name=Magic Sphere With {1}
+
+subtitles.fairyWand.use=Use Fairy Magic
+subtitles.fairyWand.charge=Charge Fairy Magic
+
+effect.mirageFairy.stepHeight=Step Height
+
+container.fairyChest=Fairy Chest
+
+itemGroup.mirageFairy=Mirage Fairy
+itemGroup.mirageFairy.fairy=Mirage Fairy : Fairy
+itemGroup.mirageFairy.fairySpirit=Mirage Fairy : Fairy Spirit
+itemGroup.mirageFairy.magicSphere=Mirage Fairy : Magic Sphere
+
+fairyMagic.waterFlowGeneration.name=Water Flow Generation
+fairyMagic.meteorStrike.name=Meteor Strike
+fairyMagic.thunder.name=Thunder
+fairyMagic.scapegoat.name=Scapegoat
+fairyMagic.strongBody.name=Strong Body
+fairyMagic.levitation.name=Levitation
+fairyMagic.waterBreathing.name=Water Breathing
+fairyMagic.instantFarming.name=Instant Farming
+fairyMagic.magicArrow.name=Magic Arrow
+fairyMagic.protect.name=Protect
+fairyMagic.workbench.name=Workbench
+fairyMagic.invisible.name=Invisible
+fairyMagic.itemCollecting.name=Item Collecting
+fairyMagic.haste.name=Haste
+
+fairyMagic.needleFloor.name=Needle Floor

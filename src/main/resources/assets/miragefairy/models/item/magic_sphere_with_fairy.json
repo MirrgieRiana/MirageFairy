@@ -1,0 +1,14 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "miragefairy:items/magic_sphere_with_fairy_0",
+        "layer1": "miragefairy:items/magic_sphere_with_fairy_1",
+        "layer2": "miragefairy:items/magic_sphere_with_fairy_2",
+        "layer3": "miragefairy:items/magic_sphere_with_fairy_3",
+        "layer4": "miragefairy:items/magic_sphere_with_fairy_4",
+        "layer5": "miragefairy:items/magic_sphere_with_fairy_5",
+        "layer6": "miragefairy:items/magic_sphere_with_fairy_6",
+        "layer7": "miragefairy:items/magic_sphere_with_fairy_7",
+        "layer8": "miragefairy:items/magic_sphere_with_fairy_8"
+    }
+}

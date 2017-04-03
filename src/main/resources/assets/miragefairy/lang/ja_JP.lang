@@ -1,0 +1,52 @@
+tile.ore.miragium.name=ミラジウム鉱石
+tile.ore.bloodstone.name=紅天石鉱石
+tile.needleFloor.name=ニードルフロア
+tile.fairyHousePlant.name=妖精の家
+tile.fairyHouseCube.oak.name=妖精の家
+tile.fairyHouseCube.spruce.name=妖精の家
+tile.fairyHouseCube.birch.name=妖精の家
+tile.fairyHouseCube.jungle.name=妖精の家
+tile.fairyHouseCube.acacia.name=妖精の家
+tile.fairyHouseCube.dark_oak.name=妖精の家
+tile.fairyChest.name=妖精のチェスト
+item.bloodstone.name=紅天石
+item.ingotMiragium.name=ミラジウムインゴット
+item.fairyWand.name=妖精の杖
+item.doll.name=人形
+item.dustMirage.name=ミラージュの粉
+item.fairy.name=%s
+item.fairySpirit.name=%sの心
+item.manaChargingCrystal.name=妖魔結晶
+item.magicSphere.name={0}の珠
+item.magicSphere.invalid.name=魔法の珠
+item.magicSphereWithFairy.name={1}と{0}の珠
+item.magicSphereWithFairy.invalid.name={1}と魔法の珠
+
+subtitles.fairyWand.use=魔法が使われる
+subtitles.fairyWand.charge=魔法がチャージされる
+
+effect.mirageFairy.stepHeight=ステップ高度上昇
+
+container.fairyChest=妖精のチェスト
+
+itemGroup.mirageFairy=Mirage Fairy
+itemGroup.mirageFairy.fairy=Mirage Fairy : 妖精
+itemGroup.mirageFairy.fairySpirit=Mirage Fairy : 妖精の心
+itemGroup.mirageFairy.magicSphere=Mirage Fairy : 魔法の珠
+
+fairyMagic.waterFlowGeneration.name=流水生成
+fairyMagic.meteorStrike.name=メテオストライク
+fairyMagic.thunder.name=サンダー
+fairyMagic.scapegoat.name=生贄
+fairyMagic.strongBody.name=身体強化
+fairyMagic.levitation.name=レビテーション
+fairyMagic.waterBreathing.name=水中呼吸
+fairyMagic.instantFarming.name=瞬間耕作
+fairyMagic.magicArrow.name=マジックアロー
+fairyMagic.protect.name=プロテクト
+fairyMagic.workbench.name=作業台
+fairyMagic.invisible.name=インビジブル
+fairyMagic.itemCollecting.name=回収
+fairyMagic.haste.name=ヘイスト
+
+fairyMagic.needleFloor.name=ニードルフロア

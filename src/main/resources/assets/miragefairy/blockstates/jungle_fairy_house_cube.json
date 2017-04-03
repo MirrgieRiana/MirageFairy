@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "miragefairy:jungle_fairy_house_cube" },
+        "facing=south": { "model": "miragefairy:jungle_fairy_house_cube", "y": 180 },
+        "facing=west":  { "model": "miragefairy:jungle_fairy_house_cube", "y": 270 },
+        "facing=east":  { "model": "miragefairy:jungle_fairy_house_cube", "y": 90 }
+    }
+}
