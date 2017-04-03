@@ -89,7 +89,7 @@ public class FairyMagicNeedleFloor extends FairyMagic
 						if (!worldIn.isRemote) {
 							worldIn.setBlockState(pos2, ModuleFairy.blockNeedleFloor.getDefaultState());
 
-							Util.getTileEntity(TileEntityNeedleFloor.class, worldIn, pos)
+							Util.getTileEntity(TileEntityNeedleFloor.class, worldIn, pos2)
 								.ifPresent(t -> {
 									t.data.damage = propertyDamage.get(fairy);
 									t.data.duration = propertyDuration.get(fairy);

@@ -251,15 +251,20 @@ public class TileEntityFairyChest extends TileEntityLockableLoot implements ITic
 				}
 
 				if (flag) {
-					((WorldServer) world).getPlayerChunkMap().getEntry(pos.getX() >> 4, pos.getZ() >> 4).sendPacket(getUpdatePacket());
+					sendPacket();
 					update2();
 				}
 			}
 			if (tick % 10000 == 0) {
-				((WorldServer) world).getPlayerChunkMap().getEntry(pos.getX() >> 4, pos.getZ() >> 4).sendPacket(getUpdatePacket());
+				sendPacket();
 				update2();
 			}
 		}
+	}
+
+	public void sendPacket()
+	{
+		((WorldServer) world).getPlayerChunkMap().getEntry(pos.getX() >> 4, pos.getZ() >> 4).sendPacket(getUpdatePacket());
 	}
 
 	@Override
