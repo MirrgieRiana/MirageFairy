@@ -5,6 +5,7 @@ import java.util.List;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import mirrg.minecraft.mod.miragefairy.api.IItemManaProvider;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -50,7 +51,7 @@ public class ItemManaChargingCrystal extends Item implements IItemManaProvider
 
 	private double getHealth(ItemStack stack)
 	{
-		return Math.max(Math.min(getMana(stack) / 8000.0, 1), 0);
+		return Util.trim(getMana(stack) / 8000.0, 0, 1);
 	}
 
 	public ItemStack createItemStack(long mana)

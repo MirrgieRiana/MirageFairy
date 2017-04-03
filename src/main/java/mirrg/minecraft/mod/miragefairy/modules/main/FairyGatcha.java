@@ -319,10 +319,31 @@ public class FairyGatcha
 					.toLowerCase().indexOf(k.toLowerCase()) != -1));
 	}
 
+	public static String getString(Hashtable<EnumFairy, Double> gatchaWeight)
+	{
+		ArrayList<String> strings = new ArrayList<>();
+		strings.add("--------------------");
+		double[] sum = {
+			0
+		};
+		gatchaWeight.entrySet().stream()
+			.sorted((a, b) -> (int) Math.signum(b.getValue() - a.getValue()))
+			.forEach(e -> {
+				strings.add(String.format("  %7.3f%%: %s %s",
+					e.getValue() * 100,
+					e.getKey().getRarity(),
+					e.getKey().getUnlocalizedName()));
+				sum[0] += e.getValue();
+			});
+		strings.add(String.format("# %7.3f%% #", sum[0] * 100));
+		strings.add("--------------------");
+		return String.join("\n", strings);
+	}
+
 	// TODO testに移行
 	public static void main(String[] args)
 	{
-		System.out.println(ItemFairyWand.getString(FairyGatcha.getGatchaWeight(new FairyGatchaSettings(2, 3, 0.2))));
+		System.out.println(getString(FairyGatcha.getGatchaWeight(new FairyGatchaSettings(2, 3, 0.2))));
 	}
 
 }

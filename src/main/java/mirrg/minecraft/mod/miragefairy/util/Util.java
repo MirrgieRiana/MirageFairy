@@ -14,9 +14,17 @@ public class Util
 
 	public static int trim(int value, int min, int max)
 	{
-		if (value > max) value = max;
-		if (value < min) value = min;
-		return value;
+		return value > max ? max : value < min ? min : value;
+	}
+
+	public static long trim(long value, long min, long max)
+	{
+		return value > max ? max : value < min ? min : value;
+	}
+
+	public static double trim(double value, double min, double max)
+	{
+		return value > max ? max : value < min ? min : value;
 	}
 
 	public static <T extends TileEntity> T getTileEntityFromItemStack(T tileEntity, ItemStack itemStack)
