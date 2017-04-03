@@ -144,7 +144,7 @@ public class ModuleMain extends ModuleBase
 					.setCreativeTab(ModuleMain.creativeTabMirageFairy);
 				ModelLoader.setCustomStateMapper(
 					blockFairyHouseCube,
-					new StateMap.Builder().withName(blockFairyHouseCube.VARIANT).withSuffix("_fairy_house_cube").build());
+					new StateMap.Builder().withName(BlockFairyHouseCube.VARIANT).withSuffix("_fairy_house_cube").build());
 				GameRegistry.registerTileEntity(TileEntityFairyHouseCube.class, "fairy_house_cube");
 
 				itemFairyHouseCube = tuple.getSecond();
