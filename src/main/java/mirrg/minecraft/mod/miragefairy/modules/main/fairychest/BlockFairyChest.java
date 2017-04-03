@@ -134,10 +134,8 @@ public class BlockFairyChest extends BlockContainer
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
 	{
 		if (stack.hasDisplayName()) {
-			Optional<TileEntityFairyChest> oTileEntity = Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos);
-			if (oTileEntity.isPresent()) {
-				oTileEntity.get().setCustomName(stack.getDisplayName());
-			}
+			Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
+				.ifPresent(t -> t.setCustomName(stack.getDisplayName()));
 		}
 	}
 
