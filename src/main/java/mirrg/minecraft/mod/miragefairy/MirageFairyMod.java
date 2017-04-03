@@ -6,7 +6,6 @@ import mirrg.minecraft.mod.miragefairy.core.ModuleBase;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.ModuleFairy;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.modules.ore.ModuleOre;
-import mirrg.minecraft.mod.miragefairy.modules.test.ModuleTest;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -23,7 +22,6 @@ public class MirageFairyMod
 
 	public MirageFairyMod()
 	{
-		modules.add(new ModuleTest());
 		modules.add(new ModuleMain());
 		modules.add(new ModuleOre());
 		modules.add(new ModuleFairy());
