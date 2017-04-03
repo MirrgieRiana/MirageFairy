@@ -1,8 +1,12 @@
 package mirrg.minecraft.mod.miragefairy.util;
 
+import java.util.Optional;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.util.Constants.NBT;
 
 public class Util
@@ -30,6 +34,15 @@ public class Util
 	{
 		if (str.length() == 0) return str;
 		return str.substring(0, 1).toUpperCase() + str.substring(1);
+	}
+
+	public static <T extends TileEntity> Optional<T> getTileEntity(Class<T> clazz, IBlockAccess blockAccess, BlockPos pos)
+	{
+		TileEntity tileEntity = blockAccess.getTileEntity(pos);
+		if (tileEntity != null && clazz.isInstance(tileEntity)) {
+			return Optional.of((T) tileEntity);
+		}
+		return Optional.empty();
 	}
 
 }

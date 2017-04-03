@@ -2,7 +2,6 @@ package mirrg.minecraft.mod.miragefairy.modules.main;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Optional;
 
 import mirrg.minecraft.mod.miragefairy.MirageFairyMod;
 import mirrg.minecraft.mod.miragefairy.core.ItemMetadata;
@@ -463,13 +462,13 @@ public class ModuleMain extends ModuleBase
 				@Override
 				public int colorMultiplier(IBlockState state, IBlockAccess worldIn, BlockPos pos, int tintIndex)
 				{
-					Optional<TileEntityFairyChest> oTileEntity = blockFairyChest.getTileEntity(worldIn, pos);
-					if (!oTileEntity.isPresent()) return 0xffffff;
+					TileEntityFairyChest tileEntity = Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos).orElse(null);
+					if (tileEntity == null) return 0xffffff;
 
-					int litLevel = oTileEntity.get().getLitLevel();
-					int a = oTileEntity.get().getSizeInventory();
-					if (tintIndex == 0) return litLevel >= 1 ? new Color(oTileEntity.get().getColor(0, a / 2)).brighter(0.75).toInt() : 0x251B16;
-					if (tintIndex == 1) return litLevel >= 2 ? new Color(oTileEntity.get().getColor(a / 2, a / 2)).brighter(0.75).toInt() : 0x251B16;
+					int litLevel = tileEntity.getLitLevel();
+					int a = tileEntity.getSizeInventory();
+					if (tintIndex == 0) return litLevel >= 1 ? new Color(tileEntity.getColor(0, a / 2)).brighter(0.75).toInt() : 0x251B16;
+					if (tintIndex == 1) return litLevel >= 2 ? new Color(tileEntity.getColor(a / 2, a / 2)).brighter(0.75).toInt() : 0x251B16;
 
 					return 0xffffff;
 				}

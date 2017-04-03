@@ -7,9 +7,9 @@ import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicBoolean;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicDouble;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.PropertyFairyMagicInteger;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -89,14 +89,13 @@ public class FairyMagicNeedleFloor extends FairyMagic
 						if (!worldIn.isRemote) {
 							worldIn.setBlockState(pos2, ModuleFairy.blockNeedleFloor.getDefaultState());
 
-							TileEntity tileEntity = worldIn.getTileEntity(pos2);
-							if (tileEntity instanceof TileEntityNeedleFloor) {
-								TileEntityNeedleFloor tileEntityNeedleFloor = (TileEntityNeedleFloor) tileEntity;
-								tileEntityNeedleFloor.data.damage = propertyDamage.get(fairy);
-								tileEntityNeedleFloor.data.duration = propertyDuration.get(fairy);
-								tileEntityNeedleFloor.data.poison = propertyPoison.get(fairy);
-								tileEntityNeedleFloor.data.enemyOnly = propertySavePlayer.get(fairy);
-							}
+							Util.getTileEntity(TileEntityNeedleFloor.class, worldIn, pos)
+								.ifPresent(t -> {
+									t.data.damage = propertyDamage.get(fairy);
+									t.data.duration = propertyDuration.get(fairy);
+									t.data.poison = propertyPoison.get(fairy);
+									t.data.enemyOnly = propertySavePlayer.get(fairy);
+								});
 						}
 
 						// エフェクト

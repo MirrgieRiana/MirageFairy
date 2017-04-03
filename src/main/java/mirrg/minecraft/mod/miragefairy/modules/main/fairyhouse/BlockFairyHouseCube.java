@@ -8,6 +8,7 @@ import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatcha;
 import mirrg.minecraft.mod.miragefairy.modules.main.FairyGatchaSettings;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.util.Color;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -76,11 +77,10 @@ public class BlockFairyHouseCube extends BlockFairyHouseBase implements ITileEnt
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	{
-		TileEntity tileEntity = worldIn.getTileEntity(pos);
-		if (!(tileEntity instanceof TileEntityFairyHouseCube)) return state;
-		TileEntityFairyHouseCube tileEntityFairyHouseCube = (TileEntityFairyHouseCube) tileEntity;
-		return state
-			.withProperty(FACING, tileEntityFairyHouseCube.data.facing);
+		return Util.getTileEntity(TileEntityFairyHouseCube.class, worldIn, pos)
+			.map(t -> state
+				.withProperty(FACING, t.data.facing))
+			.orElse(state);
 	}
 
 	@Override

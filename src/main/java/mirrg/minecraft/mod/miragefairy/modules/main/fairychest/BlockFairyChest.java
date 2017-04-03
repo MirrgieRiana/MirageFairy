@@ -10,6 +10,7 @@ import mirrg.minecraft.mod.miragefairy.MirageFairyMod;
 import mirrg.minecraft.mod.miragefairy.modules.main.EnumGUI;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
 import mirrg.minecraft.mod.miragefairy.util.Color;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -103,10 +104,8 @@ public class BlockFairyChest extends BlockContainer
 	{
 		if (worldIn.isRemote) return true;
 
-		TileEntity tileEntity = worldIn.getTileEntity(pos);
-		if (tileEntity instanceof TileEntityFairyChest) {
-			FMLNetworkHandler.openGui(playerIn, MirageFairyMod.MODID, EnumGUI.FAIRY_CHEST.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ());
-		}
+		Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
+			.ifPresent(t -> FMLNetworkHandler.openGui(playerIn, MirageFairyMod.MODID, EnumGUI.FAIRY_CHEST.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ()));
 		return true;
 	}
 
@@ -135,9 +134,9 @@ public class BlockFairyChest extends BlockContainer
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
 	{
 		if (stack.hasDisplayName()) {
-			TileEntity tileentity = worldIn.getTileEntity(pos);
-			if (tileentity instanceof TileEntityFairyChest) {
-				((TileEntityFairyChest) tileentity).setCustomName(stack.getDisplayName());
+			Optional<TileEntityFairyChest> oTileEntity = Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos);
+			if (oTileEntity.isPresent()) {
+				oTileEntity.get().setCustomName(stack.getDisplayName());
 			}
 		}
 	}
@@ -190,7 +189,7 @@ public class BlockFairyChest extends BlockContainer
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	{
-		Optional<TileEntityFairyChest> oTileEntity = getTileEntity(worldIn, pos);
+		Optional<TileEntityFairyChest> oTileEntity = Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos);
 		if (oTileEntity.isPresent()) {
 			state = state.withProperty(FACING, oTileEntity.get().data.facing);
 		}
@@ -200,18 +199,9 @@ public class BlockFairyChest extends BlockContainer
 
 	public TileEntityFairyChest.Data getData(IBlockAccess world, BlockPos pos)
 	{
-		TileEntity tileEntity = world.getTileEntity(pos);
-		if (tileEntity instanceof TileEntityFairyChest) {
-			return ((TileEntityFairyChest) tileEntity).data;
-		} else {
-			return new TileEntityFairyChest.Data();
-		}
-	}
-
-	public Optional<TileEntityFairyChest> getTileEntity(IBlockAccess world, BlockPos pos)
-	{
-		TileEntity tileEntity = world.getTileEntity(pos);
-		return tileEntity instanceof TileEntityFairyChest ? Optional.of((TileEntityFairyChest) tileEntity) : Optional.empty();
+		return Util.getTileEntity(TileEntityFairyChest.class, world, pos)
+			.map(t -> t.data)
+			.orElseGet(() -> new TileEntityFairyChest.Data());
 	}
 
 	//
@@ -267,7 +257,9 @@ public class BlockFairyChest extends BlockContainer
 	@Override
 	public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos)
 	{
-		return getTileEntity(world, pos).map(t -> t.getLightValue()).orElse(0);
+		return Util.getTileEntity(TileEntityFairyChest.class, world, pos)
+			.map(t -> t.getLightValue())
+			.orElse(0);
 	}
 
 	@Override
@@ -276,7 +268,9 @@ public class BlockFairyChest extends BlockContainer
 	{
 		if (Math.random() < 0.3) {
 			ModuleMain.spawnParticleFairy(worldIn, new Vec3d(pos).addVector(0.5, 0.5, 0.5),
-				getTileEntity(worldIn, pos).map(t -> new Color(t.getColor()).brighter(0.75).toInt()).orElse(0xffffff));
+				Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
+					.map(t -> new Color(t.getColor()).brighter(0.75).toInt())
+					.orElse(0xffffff));
 		}
 	}
 
@@ -285,11 +279,11 @@ public class BlockFairyChest extends BlockContainer
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
 	{
-		TileEntity tileEntity = worldIn.getTileEntity(pos);
-		if (tileEntity instanceof TileEntityFairyChest) {
-			spawnAsEntity(worldIn, pos, getItem((TileEntityFairyChest) tileEntity));
-			worldIn.updateComparatorOutputLevel(pos, this);
-		}
+		Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
+			.ifPresent(t -> {
+				spawnAsEntity(worldIn, pos, getItem(t));
+				worldIn.updateComparatorOutputLevel(pos, this);
+			});
 		super.breakBlock(worldIn, pos, state);
 	}
 

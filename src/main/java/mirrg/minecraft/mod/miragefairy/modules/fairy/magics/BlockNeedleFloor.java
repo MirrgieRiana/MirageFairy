@@ -3,6 +3,7 @@ package mirrg.minecraft.mod.miragefairy.modules.fairy.magics;
 import javax.annotation.Nullable;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.TileEntityNeedleFloor.Data;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -76,12 +77,9 @@ public class BlockNeedleFloor extends Block implements ITileEntityProvider
 
 	public TileEntityNeedleFloor.Data getData(IBlockAccess world, BlockPos pos)
 	{
-		TileEntity tileEntity = world.getTileEntity(pos);
-		if (tileEntity instanceof TileEntityNeedleFloor) {
-			return ((TileEntityNeedleFloor) tileEntity).data;
-		} else {
-			return new TileEntityNeedleFloor.Data();
-		}
+		return Util.getTileEntity(TileEntityNeedleFloor.class, world, pos)
+			.map(t -> t.data)
+			.orElseGet(() -> new TileEntityNeedleFloor.Data());
 	}
 
 	@Override
