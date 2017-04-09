@@ -77,7 +77,7 @@ public enum EnumFairy implements IFairy
 	enderman(48, fc(0x000000, 0x161616, 0x161616, 0xEF84FA), 3, 180, po(0, 4, 10, 1, 20, 1), null, kw(), 0),
 	enderdragon(49, fc(0x000000, 0x181818, 0x181818, 0xA500E2), 5, 220, po(0, 0, 10, 0, 20, 1), null, kw(), 0),
 	cow(50, fc(0xDE9D9D, 0x3B2E22, 0x969696, 0x000000), 1, 120, po(3, 0, 10, 0, 0, 0), null, kw(), 0),
-	villager(51, fc(0xBD8B72, 0x3C2A23, 0x71544D, 0xBD8B72), 3, 120, po(0, 10, 10, 4, 0, 0), new FairyMagicPotionSimple("scapegoat", 1, "absorption", 25, 5, VI), kw(), 0),
+	villager(51, fc(0xBD8B72, 0x3C2A23, 0x71544D, 0xBD8B72), 3, 120, po(0, 10, 10, 4, 0, 0), new FairyMagicPotionSimple("scapegoat", 1, "absorption", 50, 5, VI), kw(), 0),
 	golem(52, fc(0xDBCDC1, 0x8B7260, 0xDDC9B9, 0x46750B), 3, 180, po(0, 10, 10, 1, 10, 0), new FairyMagicStrongBody(), kw(), 0),
 	mooshroom(53, fc(0x940E0F, 0x940E0F, 0x940E0F, 0xA1A1A1), 4, 120, po(0, 0, 10, 0, 1, 0), null, kw(), 0),
 	feather(54, fc(0xFFBE80, 0xAAAAAA, 0xFFFFFF, 0x585858), 1, 100, po(1, 2, 10, 2, 0, 0), new FairyMagicPotionSimple("levitation", 2, "levitation", 50, 0.04, VI), kw(), 0),
