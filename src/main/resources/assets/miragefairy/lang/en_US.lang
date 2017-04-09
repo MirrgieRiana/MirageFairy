@@ -34,7 +34,7 @@ itemGroup.mirageFairy.fairy=Mirage Fairy : Fairy
 itemGroup.mirageFairy.fairySpirit=Mirage Fairy : Fairy Spirit
 itemGroup.mirageFairy.magicSphere=Mirage Fairy : Magic Sphere
 
-fairyMagic.waterFlowGeneration.name=Water Flow Generation
+fairyMagic.waterGeneration.name=Water Generation
 fairyMagic.meteorStrike.name=Meteor Strike
 fairyMagic.thunder.name=Thunder
 fairyMagic.scapegoat.name=Scapegoat

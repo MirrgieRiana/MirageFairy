@@ -21,7 +21,7 @@ import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicNeedleShot
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicPotionSimple;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicStrongBody;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicThunder;
-import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWaterFlowGeneration;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWaterGeneration;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWorkbench;
 
 public enum EnumFairy implements IFairy

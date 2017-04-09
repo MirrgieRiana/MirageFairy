@@ -34,7 +34,7 @@ itemGroup.mirageFairy.fairy=Mirage Fairy : 妖精
 itemGroup.mirageFairy.fairySpirit=Mirage Fairy : 妖精の心
 itemGroup.mirageFairy.magicSphere=Mirage Fairy : 魔法の珠
 
-fairyMagic.waterFlowGeneration.name=流水生成
+fairyMagic.waterGeneration.name=流水生成
 fairyMagic.meteorStrike.name=メテオストライク
 fairyMagic.thunder.name=サンダー
 fairyMagic.scapegoat.name=生贄
