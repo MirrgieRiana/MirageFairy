@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "miragefairy:fairy_torch" },
+        "facing=east": { "model": "miragefairy:fairy_torch_wall" },
+        "facing=south": { "model": "miragefairy:fairy_torch_wall", "y": 90 },
+        "facing=west": { "model": "miragefairy:fairy_torch_wall", "y": 180 },
+        "facing=north": { "model": "miragefairy:fairy_torch_wall", "y": 270 }
+    }
+}

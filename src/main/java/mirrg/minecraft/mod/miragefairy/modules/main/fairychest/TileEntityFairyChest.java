@@ -67,6 +67,18 @@ public class TileEntityFairyChest extends TileEntityLockableLoot implements ITic
 		return writeToNBT(new NBTTagCompound());
 	}
 
+	public void sendPacket()
+	{
+		((WorldServer) world).getPlayerChunkMap().getEntry(pos.getX() >> 4, pos.getZ() >> 4).sendPacket(getUpdatePacket());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
+	{
+		readFromNBT(pkt.getNbtCompound());
+		update2();
+	}
+
 	//
 
 	public static class Data
@@ -260,18 +272,6 @@ public class TileEntityFairyChest extends TileEntityLockableLoot implements ITic
 				update2();
 			}
 		}
-	}
-
-	public void sendPacket()
-	{
-		((WorldServer) world).getPlayerChunkMap().getEntry(pos.getX() >> 4, pos.getZ() >> 4).sendPacket(getUpdatePacket());
-	}
-
-	@Override
-	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
-	{
-		readFromNBT(pkt.getNbtCompound());
-		update2();
 	}
 
 	private void update2()

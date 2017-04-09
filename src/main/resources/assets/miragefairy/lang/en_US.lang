@@ -9,6 +9,7 @@ tile.fairyHouseCube.jungle.name=Fairy House
 tile.fairyHouseCube.acacia.name=Fairy House
 tile.fairyHouseCube.dark_oak.name=Fairy House
 tile.fairyChest.name=Fairy Chest
+tile.fairyTorch.name=Fairy Torch
 item.bloodstone.name=Bloodstone
 item.ingotMiragium.name=Miragium Ingot
 item.fairyWand.name=Fairywand
@@ -48,5 +49,6 @@ fairyMagic.workbench.name=Workbench
 fairyMagic.invisible.name=Invisible
 fairyMagic.itemCollecting.name=Item Collecting
 fairyMagic.haste.name=Haste
+fairyMagic.torchGeneration.name=Torch Generation
 
 fairyMagic.needleFloor.name=Needle Floor

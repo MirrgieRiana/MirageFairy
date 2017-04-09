@@ -9,6 +9,7 @@ tile.fairyHouseCube.jungle.name=妖精の家
 tile.fairyHouseCube.acacia.name=妖精の家
 tile.fairyHouseCube.dark_oak.name=妖精の家
 tile.fairyChest.name=妖精のチェスト
+tile.fairyTorch.name=妖精のトーチ
 item.bloodstone.name=紅天石
 item.ingotMiragium.name=ミラジウムインゴット
 item.fairyWand.name=妖精の杖
@@ -48,5 +49,6 @@ fairyMagic.workbench.name=作業台
 fairyMagic.invisible.name=インビジブル
 fairyMagic.itemCollecting.name=回収
 fairyMagic.haste.name=ヘイスト
+fairyMagic.torchGeneration.name=松明生成
 
 fairyMagic.needleFloor.name=ニードルフロア

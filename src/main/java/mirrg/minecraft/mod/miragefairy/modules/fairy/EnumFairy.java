@@ -21,6 +21,7 @@ import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicNeedleShot
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicPotionSimple;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicStrongBody;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicThunder;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicTorchGeneration;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWaterGeneration;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWorkbench;
 
@@ -111,7 +112,7 @@ public enum EnumFairy implements IFairy
 	workbench(82, fc(0x957546, 0xB17449, 0xB17449, 0x2B2315), 2, 150, po(2, 10, 0, 0, 0, 0), new FairyMagicWorkbench(), kw(), 0),
 	enchantmenttable(83, fc(0x957546, 0x322042, 0x2BDED6, 0x8A1512), 4, 150, po(0, 10, 1, 0, 4, 1), null, kw(), 0),
 	glass(84, fc(0x957546, 0xE8FAFE, 0xFFFFFF, 0xC4F7FF), 2, 160, po(4, 10, 0, 0, 1, 0), new FairyMagicPotionSimple("invisible", 3, "invisibility", 1000, 2, IN), kw(), 0),
-	torch(85, fc(0x957546, 0xFFB800, 0xFFC42C, 0xFFF8C3), 2, 150, po(0, 10, 1, 0, 1, 0), null, kw(), 0),
+	torch(85, fc(0x957546, 0xFFB800, 0xFFC42C, 0xFFF8C3), 2, 150, po(0, 10, 1, 0, 1, 0), new FairyMagicTorchGeneration(), kw(), 0),
 	stair(86, fc(0x957546, 0xBB9761, 0xBB9761, 0x005500), 1, 150, po(4, 10, 0, 1, 1, 0), null, kw(), 0),
 	chest(87, fc(0x957546, 0xA76E1F, 0xA76E1F, 0x413B2F), 2, 190, po(2, 10, 0, 0, 0, 0), new FairyMagicItemCollecting(), kw(), 0),
 	bed(88, fc(0x957546, 0x9C2626, 0xEBEBEB, 0x413421), 2, 190, po(1, 10, 4, 0, 0, 0), null, kw(), 0),

@@ -1,0 +1,7 @@
+{
+    "parent": "miragefairy:block/torch_advanced",
+    "textures": {
+        "body": "miragefairy:blocks/fairy_torch_body",
+        "head": "miragefairy:blocks/fairy_torch_head"
+    }
+}

@@ -90,6 +90,26 @@ public class Color
 		return rgb(r, g, b);
 	}
 
+	public double getRed()
+	{
+		return r;
+	}
+
+	public double getGreen()
+	{
+		return g;
+	}
+
+	public double getBlue()
+	{
+		return b;
+	}
+
+	public double getBrightness()
+	{
+		return (r + g + b) / 3;
+	}
+
 	/**
 	 * @param r
 	 *            0 ~ 1

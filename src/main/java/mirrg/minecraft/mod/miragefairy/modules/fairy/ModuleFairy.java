@@ -5,11 +5,17 @@ import java.util.List;
 
 import mirrg.minecraft.mod.miragefairy.MirageFairyMod;
 import mirrg.minecraft.mod.miragefairy.core.ModuleBase;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.BlockFairyTorch;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.BlockNeedleFloor;
+import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.TileEntityFairyTorch;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.TileEntityNeedleFloor;
 import mirrg.minecraft.mod.miragefairy.modules.main.ModuleMain;
+import mirrg.minecraft.mod.miragefairy.util.Util;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.client.resources.IResourceManager;
@@ -24,7 +30,9 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Tuple;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.LanguageMap;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -44,6 +52,9 @@ public class ModuleFairy extends ModuleBase
 
 	public static BlockNeedleFloor blockNeedleFloor;
 	public static ItemBlock itemNeedleFloor;
+
+	public static BlockFairyTorch blockFairyTorch;
+	public static ItemBlock itemFairyTorch;
 
 	public static Potion potionStepHeight;
 
@@ -127,6 +138,19 @@ public class ModuleFairy extends ModuleBase
 
 				itemNeedleFloor = tuple.getSecond();
 				ModelLoader.setCustomModelResourceLocation(itemNeedleFloor, 0, new ModelResourceLocation(MirageFairyMod.MODID + ":needle_floor", "inventory"));
+			}
+
+			// fairy torch
+			{
+				Tuple<BlockFairyTorch, ItemBlock> tuple = registerBlock(new BlockFairyTorch(), "fairy_torch", "fairyTorch");
+
+				blockFairyTorch = tuple.getFirst();
+				blockFairyTorch
+					.setCreativeTab(ModuleMain.creativeTabMirageFairy);
+				GameRegistry.registerTileEntity(TileEntityFairyTorch.class, "fairy_torch");
+
+				itemFairyTorch = tuple.getSecond();
+				ModelLoader.setCustomModelResourceLocation(itemFairyTorch, 0, new ModelResourceLocation(MirageFairyMod.MODID + ":fairy_torch", "inventory"));
 			}
 		}
 
@@ -269,6 +293,35 @@ public class ModuleFairy extends ModuleBase
 				}
 			}, new Item[] {
 				itemMagicSphereWithFairy,
+			});
+			Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new IBlockColor() {
+				@Override
+				public int colorMultiplier(IBlockState state, IBlockAccess worldIn, BlockPos pos, int tintIndex)
+				{
+					TileEntityFairyTorch tileEntity = Util.getTileEntity(TileEntityFairyTorch.class, worldIn, pos).orElse(null);
+					if (tileEntity == null) return 0xffffff;
+
+					if (tintIndex == 0) return tileEntity.data.colorBody;
+					if (tintIndex == 1) return tileEntity.data.colorHead;
+
+					return 0xffffff;
+				}
+			}, new Block[] {
+				blockFairyTorch,
+			});
+			Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
+				@Override
+				public int getColorFromItemstack(ItemStack stack, int tintIndex)
+				{
+					TileEntityFairyTorch tileEntity = Util.getTileEntityFromItemStack(new TileEntityFairyTorch(), stack);
+
+					if (tintIndex == 0) return tileEntity.data.colorBody;
+					if (tintIndex == 1) return tileEntity.data.colorHead;
+
+					return 0xffffff;
+				}
+			}, new Item[] {
+				itemFairyTorch,
 			});
 		}
 
