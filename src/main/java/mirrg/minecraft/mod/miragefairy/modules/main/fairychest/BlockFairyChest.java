@@ -264,12 +264,13 @@ public class BlockFairyChest extends BlockContainer
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
 	{
-		if (Math.random() < 0.3) {
-			ModuleMain.spawnParticleFairy(worldIn, new Vec3d(pos).addVector(0.5, 0.5, 0.5),
-				Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
-					.map(t -> new Color(t.getColor()).brighter(0.75).toInt())
-					.orElse(0xffffff));
-		}
+		Util.getTileEntity(TileEntityFairyChest.class, worldIn, pos)
+			.ifPresent(t -> {
+				if (Math.random() < 0.5 * t.getLightValue() / 15) {
+					ModuleMain.spawnParticleFairy(worldIn, new Vec3d(pos).addVector(0.5, 0.5, 0.5),
+						new Color(t.getColor()).brighter(0.75).toInt());
+				}
+			});
 	}
 
 	//
