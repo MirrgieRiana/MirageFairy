@@ -27,7 +27,7 @@ import mirrg.minecraft.mod.miragefairy.modules.fairy.magics.FairyMagicWorkbench;
 public enum EnumFairy implements IFairy
 {
 	air(0, fc(0xFFBE80, 0xDEFFFF, 0xDEFFFF, 0xB0FFFF), 1, 80, po(10, 0, 0, 0, 0, 1), null, kw(), 1),
-	water(1, fc(0x5469F2, 0x172AD3, 0x5985FF, 0x2D40F4), 1, 90, po(10, 1, 2, 0, 0, 1), new FairyMagicWaterFlowGeneration(), kw(), 1),
+	water(1, fc(0x5469F2, 0x172AD3, 0x5985FF, 0x2D40F4), 1, 90, po(10, 1, 2, 0, 0, 1), new FairyMagicWaterGeneration(), kw(), 1),
 	lava(2, fc(0xCD4208, 0xCC4108, 0xEDB54A, 0x4C1500), 2, 90, po(10, 1, 0, 0, 0, 0), null, kw(), 1),
 	fire(3, fc(0xFF6C01, 0xFF7324, 0xF9DFA4, 0xFF4000), 1, 70, po(10, 2, 1, 0, 0, 0), null, kw(), 1),
 	sun(4, fc(0xff2f00, 0xff7500, 0xff972b, 0xffe7b2), 5, 260, po(23, 1, 0, 0, 0, 10), null, kw("celestial:%s"), 1),
