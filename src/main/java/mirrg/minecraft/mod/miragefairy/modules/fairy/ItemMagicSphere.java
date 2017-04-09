@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy.ItemTypeProvider;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
@@ -36,20 +37,7 @@ public class ItemMagicSphere extends ItemFairyBase
 	@Override
 	public EnumFairy findMagicOperator(ItemStack itemStack, EntityPlayer playerIn, EnumHand handIn)
 	{
-		EnumFairy fairy;
-
-		fairy = getFairy2(playerIn.getHeldItem(EnumHand.OFF_HAND));
-		if (fairy != null) return fairy;
-
-		fairy = getFairy2(playerIn.getHeldItem(EnumHand.MAIN_HAND));
-		if (fairy != null) return fairy;
-
-		for (int i = 0; i < playerIn.inventory.getSizeInventory(); ++i) {
-			fairy = getFairy2(playerIn.inventory.getStackInSlot(i));
-			if (fairy != null) return fairy;
-		}
-
-		return null;
+		return Util.findItemNullable(playerIn, handIn, this::getFairy2);
 	}
 
 	private EnumFairy getFairy2(ItemStack itemStack)

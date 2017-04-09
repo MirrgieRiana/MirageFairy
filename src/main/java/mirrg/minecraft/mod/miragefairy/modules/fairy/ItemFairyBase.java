@@ -10,6 +10,7 @@ import mirrg.minecraft.mod.miragefairy.api.IItemManaProvider;
 import mirrg.minecraft.mod.miragefairy.core.ItemMetadata;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.EnumFairy.ItemTypeProvider;
 import mirrg.minecraft.mod.miragefairy.modules.fairy.magic.FairyMagic;
+import mirrg.minecraft.mod.miragefairy.util.Util;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -219,12 +220,9 @@ public abstract class ItemFairyBase extends ItemMetadata<EnumFairy.ItemTypeProvi
 
 	public static boolean tryUseMana(EntityPlayer player, long cost)
 	{
-		if (tryUseMana(player.getHeldItem(EnumHand.OFF_HAND), cost)) return true;
-		if (tryUseMana(player.getHeldItem(EnumHand.MAIN_HAND), cost)) return true;
-		for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
-			if (tryUseMana(player.inventory.getStackInSlot(i), cost)) return true;
-		}
-		return false;
+		return Util.findItemPredicate(player, EnumHand.MAIN_HAND, s -> tryUseMana(s, cost))
+			.map(s -> true)
+			.orElse(false);
 	}
 
 	public static boolean tryUseMana(ItemStack itemStack, long cost)
