@@ -89,7 +89,7 @@ public abstract class FairyMagic
 		return new ActionResult<>(EnumActionResult.PASS, itemStack);
 	}
 
-	protected RayTraceResult rayTrace(IFairy fairy, ItemStack itemStack, EntityPlayer playerIn, World worldIn, double distance, boolean useLiquids)
+	protected RayTraceResult rayTrace(EntityPlayer playerIn, World worldIn, double distance, boolean useLiquids)
 	{
 		float rotationPitch = playerIn.rotationPitch;
 		float rotationYaw = playerIn.rotationYaw;
@@ -186,7 +186,7 @@ public abstract class FairyMagic
 	{
 
 		// ブロックをタゲれない時は失敗
-		RayTraceResult rayTraceResult = rayTrace(fairy, itemStack, player, world, reach, false);
+		RayTraceResult rayTraceResult = rayTrace(player, world, reach, false);
 		if (rayTraceResult == null || rayTraceResult.typeOfHit != Type.BLOCK) {
 
 			// 失敗エフェクト
